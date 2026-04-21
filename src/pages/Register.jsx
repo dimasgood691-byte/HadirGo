@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-function ManageSiswa() {
+function Register() {
     return (
         <div className="container">
-            <h1>Hello Ini ManageSiswa Web HadirGo!</h1>
+            <h1>Hello Ini Register Web HadirGo!</h1>
         </div>
     );
 }
 
-export default ManageSiswa;
+export default Register;

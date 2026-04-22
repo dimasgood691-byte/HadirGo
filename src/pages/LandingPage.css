@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Candal", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 :root {
@@ -12,9 +15,132 @@
 }
 
 .container-utama {
-    background-color: var(--primary-blue);
     min-height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+/* header menu */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0px;
+    animation: slideDown 0.6s ease both;
+}
+
+.top-logo {
+    width: 220px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    padding: 5px;
+}
+
+
+.text-linklabahead {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+    padding: 40px;
+}
+
+/* main/hero menu */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px 70px 60px;
+    min-height: calc(100vh - 100px);
+    position: relative;
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+    animation: fadeInLeft 0.8s ease 0.2s both;
+}
+
+.highlight-box {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    max-width: 100%;
+}
+
+.highlight-box h1 {
+    font-size: 60px;
+    font-weight: 1000;
+    color: var(--primary-blue);
+    line-height: 1.2;
+    margin-bottom: 0px;
+}
+
+.highlight-box span {
+    color: var(--accent-yellow);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    margin-top: -20px;
+    color: solid black;
+    line-height: 1.1;
+}
+
+/* Button */
+/* Button Styling */
+.button-daftar {
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: #e67610;
+    margin-top: 20px;
+}
+
+.button-daftar:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 20px #e67610, 0 0 40px #e67610;
+}
+
+/* Hero Image Wrapper - Prevents overlap */
+.hero-image-wrapper {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInRight 0.8s ease 0.4s both;
+}
+
+.hero-img {
+    width: 380px;
+    height: 380px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    animation: float 4s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+.manekin {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    display: block;
 }

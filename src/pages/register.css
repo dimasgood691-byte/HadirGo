@@ -1,0 +1,206 @@
+/* --- KODE ASLI KAMU (TIDAK DIUBAH) --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Candal", sans-serif;
+    font-style: normal;
+}
+
+:root {
+    --primary-dark: #0F172A;
+    --primary-blue: #0A3865;
+    --accent-yellow: #EF9F27;
+    --putih: white;
+    --glass-bg: rgba(30, 41, 59, 0.7);
+}
+
+
+.register-page {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    font-family: "Inter", sans-serif;
+}
+
+/* SISI KIRI (Aslinya Form) */
+.form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: #f0f2f5;
+    font-size: 1rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 25px 0;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.checkbox-group a {
+    color: var(--accent-yellow);
+    text-decoration: underline;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out 0.1s;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-yellow);
+    transform: scale(1.1);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 30px;
+    color: #444;
+}
+
+.login-link a {
+    color: var(--accent-yellow);
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.1s ease-in-out 0.1s;
+}
+
+.login-link a:hover {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+/* SISI KANAN (Aslinya Logo) */
+.image-section {
+    flex: 1;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+@media (min-width: 769px) {
+    .image-section {
+        margin: 0;
+        border-radius: 60px 0 0 60px;
+    }
+}
+
+.side-logo {
+    width: 95%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .register-page {
+        flex-direction: column;
+    }
+
+    .image-section {
+        display: none;
+    }
+
+    .top-logo {
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+
+/* --- MODIFIKASI TAMBAHAN (OVERRIDE) --- */
+/* Menaruh ini di bawah agar aturan CSS ini yang dimenangkan oleh browser */
+
+@media (min-width: 769px) {
+    .register-page {
+        /* Membalik posisi: Sisi Kanan (Logo) jadi di Kiri, Sisi Kiri (Form) jadi di Kanan */
+        flex-direction: row-reverse;
+    }
+
+    .image-section {
+        /* Mengubah warna background menjadi biru gelap sesuai gambar */
+        background-color: #efefef !important;
+
+        /* Membalik lengkungan sudut (Sekarang melengkung di kanan dalam) */
+        border-radius: 0 60px 60px 0 !important;
+        margin: 0 !important;
+    }
+
+    .form-section {
+        /* Menyesuaikan padding agar form tidak terlalu rapat ke box biru */
+        padding-left: 40px;
+    }
+}
+
+/* Penyesuaian warna dan elemen agar 100% mirip gambar */
+.title {
+    text-align: center;
+    color: #0A3865;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+/* Fix untuk mobile agar tidak berantakan jika layar kecil */
+.register-page {
+    height: auto !important;
+    min-height: 100vh;
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}

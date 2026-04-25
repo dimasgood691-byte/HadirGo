@@ -1,0 +1,166 @@
+/* Container Utama */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Candal", sans-serif;
+  font-style: normal;
+}
+
+.login-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e6e6;
+  /* Warna dasar abu muda */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  /* Supaya lingkaran tidak bikin scrollbar */
+}
+
+/* --- BACKGROUND DECORATION (Lingkaran) --- */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #0d59a3;
+  /* Warna biru sesuai gambar */
+  z-index: 1;
+}
+
+.circle-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -150px;
+}
+
+.circle-2 {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  right: -50px;
+}
+
+.circle-3 {
+  width: 300px;
+  height: 300px;
+  bottom: 50px;
+  left: -100px;
+}
+
+/* --- LOGIN CARD --- */
+.login-card {
+  position: relative;
+  z-index: 10;
+  /* Di atas lingkaran */
+  background: white;
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-title {
+  color: #347fbf;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.login-subtitle {
+  color: #333;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+/* --- FORM & INPUT --- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #dbdbdb;
+  /* Warna abu input */
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-form input::placeholder {
+  color: #888;
+}
+
+/* --- BUTTONS --- */
+.btn-signin {
+  margin-top: 10px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #347fbf;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-signin:hover {
+  background-color: #286699;
+}
+
+/* --- SEPARATOR --- */
+.separator {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #888;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #888;
+}
+
+.separator span {
+  padding: 0 10px;
+  font-size: 0.8rem;
+}
+
+/* --- BUTTON OTHER --- */
+.btn-other {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f1a331;
+  /* Warna oranye sesuai gambar */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-other:hover {
+  background-color: #d98f26;
+}
+
+/* Responsive Mobile */
+@media (max-width: 480px) {
+  .login-card {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+}

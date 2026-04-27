@@ -165,47 +165,6 @@ function LandingPage() {
             />
             {/* pembatas halaman end */}
 
-            {/* halaman fitur */}
-            <section>
-                <div className="container">
-                    <h2>KENAPA KAMI MEMBIKIN WEB SITE INI?</h2>
-                    <p className="subtitle">absen dengan mudah dan praktis dengan hadir go</p>
-
-                    <div className="grid-layout">
-                        {featureData.map((item) => (
-                            <div
-                                key={item.id}
-                                className="feature-card"
-                                onClick={() => navigate(item.path)}
-                            >
-                                <img src={item.img} alt={item.title} className="feature-icon" />
-                                <div className="text-content">
-                                    <h3 className="card-title">{item.title}</h3>
-                                    <p>{item.desc}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-            {/* halaman fitur end */}
-
-            {/* pembatas halaman start */}
-            <div
-                className="page-divider"
-                style={{
-                    width: '100%',
-                    height: '40px', // Sesuaikan ketebalan biru di gambar
-                    backgroundColor: '#0A3865', // Warna biru tua HadirGo!
-                    margin: '0',
-                    padding: '0',
-                    position: 'relative', // Tambahkan ini untuk memastikan dia di atas layer background
-                    zIndex: '10',         // Memastikan pembatas tampil di depan
-                    display: 'block'
-                }}
-            />
-            {/* pembatas halaman end */}
-
             {/* halaman development */}
             <section>
                 <h2>TEAM DEVELOPER</h2>

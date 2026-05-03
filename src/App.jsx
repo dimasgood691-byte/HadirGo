@@ -12,6 +12,7 @@ import LandingPage from './pages/LandingPage';
 // atau di dalam sebuah Layout component.
 
 function App() {
+
     return (
         <Router>
             <Routes>

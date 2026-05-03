@@ -78,7 +78,7 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('link-gambar-kamu.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('link-gambar-kamu.jpg');
     background-size: cover;
 }
 
@@ -420,29 +420,78 @@ h2 {
     /* Durasi zoom gambar */
 }
 
-.bantuan {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: 30px;
-}
-
-.btn-bantuan {
-    text-decoration: none;
-    background-color: var(--primary-blue);
-    padding: 5px 9px;
-    font-size: 15px;
-    color: white;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.btn-bantuan:hover {
+/* Styling Tombol Utama */
+.help-button {
+    position: fixed;    
+    bottom: 20px;
+    right: 20px;
     background-color: var(--accent-yellow);
-    transform: translateY(-4px) scale(1.1);
-    box-shadow: 0 10px 30px rgba(239, 159, 39, 0.5);
+    /* Warna ungu khas WPU */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Styling Jendela Chat */
+.chat-window {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    /* Sembunyi secara default */
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.chat-window.show {
+    display: flex !important;
+}
+
+.chat-header {
+    background: var(--primary-blue);
+    color: white;
+    padding: 15px;
+}
+
+.chat-body {
+    height: 200px;
+    padding: 15px;
+    background: #f9f9f9;
+}
+
+.chat-footer {
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+.chat-footer input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.button-send {
+    background-color: var(--accent-yellow);
+    border: none;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-send:hover {
+    background-color: var(--primary-blue);
+    transition-delay: 5ms;
 }
 
 /* Keyframes untuk Animasi Masuk */

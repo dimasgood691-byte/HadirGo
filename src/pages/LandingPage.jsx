@@ -15,6 +15,7 @@ import iconJadul from '../assets/jadul.jpg';
 import iconPraktis from '../assets/praktis.jpg';
 import iconWaktu from '../assets/waktu.jpg';
 import iconMudah from '../assets/mempermudah.jpg';
+import { supabase } from '../lib/supabaseClient'
 
 function LandingPage() {
     const navigate = useNavigate();
@@ -88,9 +89,24 @@ function LandingPage() {
         { id: 4, img: iconMudah, title: 'Mempermudah', desc: 'Mempermudah pekerjaan sekretaris kelas. Agar mereka tidak lagi mencatat dengan kertas', path: '/mempermudah' },
     ];
 
-    const onClick = () => {
-        navigate("/register")
+    function toggleChat() {
+        const chatWindow = document.getElementById('chat-window');
+        chatWindow.classList.toggle('show');
     }
+
+    useEffect(() => {
+        const testConnection = async () => {
+            const { data, error } = await supabase.from('nama_tabel_kamu').select('*').limit(1)
+
+            if (error) {
+                console.error("Koneksi gagal/masalah permission:", error.message)
+            } else {
+                console.log("Koneksi Berhasil! Data:", data)
+            }
+        }
+
+        testConnection()
+    }, [])
 
     return (
         <div className="wrapper" onMouseMove={handleMouseMove}>
@@ -185,9 +201,6 @@ function LandingPage() {
                         </div>
                     ))}
                 </div>
-                <div className="bantuan">
-                    <button className="btn-bantuan">Bantuan!</button>
-                </div>
             </section>
             {/* halaman development end */}
 
@@ -244,6 +257,26 @@ function LandingPage() {
                 </div>
             </footer>
             {/* halaman footer end */}
+
+            {/* halaman chat bantuan */}
+            <div className="help-button" onClick={toggleChat}>
+                <span className="icon">💬</span>
+                <span className="text">Bantuan</span>
+            </div>
+
+            <div id="chat-window" className="chat-window">
+                <div className="chat-header">
+                    <strong>HadirGo!</strong>
+                    <p>Asisten Pintar & Interaktif</p>
+                </div>
+                <div className="chat-body">
+                    <p> <span>&#128483;</span>Halo! Ada yang bisa dibantu?</p>
+                </div>
+                <div className="chat-footer">
+                    <input type="text" placeholder="Tulis pertanyaan Anda..." />
+                    <button type="submit" className="button-send">kirim</button>
+                </div>
+            </div>
         </div >
     );
 }
